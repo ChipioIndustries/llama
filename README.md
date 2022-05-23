@@ -1,20 +1,4 @@
-## ⚠️ No longer maintained ⚠️
-
-Hello all! Since I do not do much Roblox game development these days (among other reasons), I will no longer be maintaining Llama.
-
-Thank you to all of Llama's contributors, and I am verry sorry for any inconveniences I have caused.
-
-If you have a good alternative to Llama, email me at llama@freddylist.xyz so I can link to it in this readme and archive Llama.
-
-I recommend you ***do not fork*** Llama for these reasons:
-- Runtime typechecking (present in Llama) is not really needed anymore with the advent of Luau type analysis.
-- The tests are a bit of a mess.
-- I'm sure Llama could've been designed better.
-- Many other minor reasons...
-
-If I do return to Roblox development in the future and no alternatives have been created yet, I may create a new immutable collections library. I will then hopefully have more experience with open-source projects and software development in general.
-
-Thank you all again!
+This is a fork of Llama that adds a couple of QoL changes, primarily returning the original table passed into `merge` if no mutations occur.
 
 <h1 align="center">📚 Llama 🦙</h1>
 <div align="center">
