@@ -132,4 +132,20 @@ return function()
 		expect(d.foo).to.equal(a.foo)
 		expect(d.bar).to.equal(b.bar)
 	end)
+
+	it("should return table 1 if no mutations are made", function()
+		local a = {
+			val1 = "hello";
+			val2 = "hello2";
+		}
+		local b = {}
+		local c = {
+			val1 = "hello";
+			val2 = "hello2";
+		}
+
+		local d = merge(a, b, c)
+
+		expect(d).to.equal(a)
+	end)
 end

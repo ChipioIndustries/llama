@@ -8,14 +8,22 @@ local validate = t.table
 
 local function merge(...)
 	local new = {}
+	local hasModified = false
 
 	for dictionaryIndex = 1, select('#', ...) do
 		local dictionary = select(dictionaryIndex, ...)
 
 		if dictionary ~= nil then
 			assert(validate(dictionary))
-			
+
 			for key, value in pairs(dictionary) do
+				if
+					not hasModified
+					and dictionaryIndex > 1
+					and new[key] ~= value
+				then
+					hasModified = true
+				end
 				if value == None then
 					new[key] = nil
 				else
@@ -23,6 +31,10 @@ local function merge(...)
 				end
 			end
 		end
+	end
+
+	if not hasModified then
+		return select(1, ...)
 	end
 
 	return new
