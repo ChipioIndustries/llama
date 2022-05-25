@@ -7,7 +7,7 @@ local validate = t.tuple(t.table, t.integer)
 
 local function set(list, index, value)
 	assert(validate(list, index))
-	
+
 	local len = #list
 
 	if index < 0 then
@@ -16,20 +16,24 @@ local function set(list, index, value)
 
 	assert(index > 0 and index <= len + 1, string.format("index %d out of bounds of list of length %d", index, len))
 
-	local new = {}
-	local indexNew = 1
+	if list[index] ~= value then
+		local new = {}
+		local indexNew = 1
 
-	for i = 1, len do
-		if i == index then
-			new[indexNew] = value
-		else
-			new[indexNew] = list[i]
+		for i = 1, len do
+			if i == index then
+				new[indexNew] = value
+			else
+				new[indexNew] = list[i]
+			end
+
+			indexNew += 1
 		end
 
-		indexNew += 1
+		return new
 	end
 
-	return new
+	return list
 end
 
 return set

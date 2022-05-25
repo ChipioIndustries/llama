@@ -82,4 +82,15 @@ return function()
 		expect(result[3]).to.equal(newValue)
 		expect(result[4]).to.equal(true)
 	end)
+
+	it("should return the same list if no change has been made", function()
+		local a = {
+			"heyo",
+			"test"
+		}
+
+		local b = set(a, 2, "test")
+
+		expect(a).to.equal(b)
+	end)
 end
