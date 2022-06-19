@@ -1,3 +1,7 @@
+## 1.2.4
+
+* `Dictionary.throwOnNilIndex` is now recursive.
+
 ## 1.2.3
 
 * New `Dictionary.throwOnNilIndex` method returns a copy of the table that throws an error if a script attempts to access a table value that does not exist.
