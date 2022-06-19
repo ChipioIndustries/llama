@@ -1,3 +1,7 @@
+## 1.2.3
+
+* New `Dictionary.throwOnNilIndex` method returns a copy of the table that throws an error if a script attempts to access a table value that does not exist.
+
 ## 1.2.2
 
 * `List.set` now returns the original list if no mutations are made to it
