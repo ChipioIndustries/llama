@@ -14,12 +14,22 @@ function metatable:__index(index)
 	error(ERROR_MESSAGE:format(index))
 end
 
+local function recursiveMetatable(dictionary)
+	setmetatable(dictionary, metatable)
+
+	for key, value in pairs(dictionary) do
+		if typeof(value) == "table" then
+			recursiveMetatable(value)
+		end
+	end
+end
+
 local function throwOnNilIndex(dictionary)
 	assert(validate(dictionary))
 
 	local new = copyDeep(dictionary)
 
-	setmetatable(new, metatable)
+	recursiveMetatable(new)
 
 	return new
 end

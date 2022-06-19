@@ -14,6 +14,9 @@ return function()
 			local inDictionary = {
 				key1 = "hello";
 				key2 = 1234;
+				yeehaw = {
+					test = "hi"
+				}
 			}
 			local inList = {
 				123,
@@ -35,15 +38,24 @@ return function()
 			local inTable = {
 				key1 = "hello world";
 				key3 = 1234;
+				key4 = {
+					test = "hi";
+				};
 			}
 			local outTable = throwOnNilIndex(inTable)
 			it("should be able to access values", function()
 				expect(outTable.key1).to.equal(inTable.key1)
 				expect(outTable.key3).to.equal(inTable.key3)
+				expect(outTable.key4.test).to.equal(inTable.key4.test)
 			end)
 			it("should throw if value is nil", function()
 				expect(function()
 					local _value = outTable.key2
+				end).to.throw()
+			end)
+			it("should throw if nested value is nil", function()
+				expect(function()
+					local _value = outTable.key4.none
 				end).to.throw()
 			end)
 		end)
