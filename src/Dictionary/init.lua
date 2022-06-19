@@ -23,6 +23,7 @@ local Dictionary = {
 	removeValues = require(script.removeValues),
 	set = require(script.set),
 	some = require(script.some),
+	throwOnNilIndex = require(script.throwOnNilIndex),
 	update = require(script.update),
 	values = require(script.values),
 }

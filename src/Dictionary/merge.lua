@@ -33,7 +33,7 @@ local function merge(...)
 		end
 	end
 
-	if not hasModified then
+	if not hasModified and select(1, ...) then
 		return select(1, ...)
 	end
 

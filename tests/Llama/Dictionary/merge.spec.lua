@@ -26,8 +26,9 @@ return function()
 
 	it("should return a new table", function()
 		local a = {}
+		local b = { test = "hi" }
 
-		expect(merge(a)).never.to.equal(a)
+		expect(merge(a, b)).never.to.equal(a)
 	end)
 
 	it("should not mutate passed in tables", function()
