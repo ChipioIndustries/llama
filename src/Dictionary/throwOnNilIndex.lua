@@ -17,7 +17,7 @@ end
 local function recursiveMetatable(dictionary)
 	setmetatable(dictionary, metatable)
 
-	for key, value in pairs(dictionary) do
+	for _key, value in pairs(dictionary) do
 		if typeof(value) == "table" then
 			recursiveMetatable(value)
 		end

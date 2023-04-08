@@ -8,6 +8,7 @@ local validate = t.table
 local function copy(list)
 	assert(validate(list))
 
+	-- selene: allow(manual_table_clone)
 	local new = {}
 
 	for i, v in ipairs(list) do

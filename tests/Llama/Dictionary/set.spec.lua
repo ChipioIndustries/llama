@@ -34,17 +34,10 @@ return function()
 			bar = 2,
 			baz = 3,
 		}
-		local mutations = 0
-
-		setmetatable(a, {
-			__newindex = function()
-				mutations = mutations + 1
-			end,
-		})
 
 		set(a, "qux", 4)
 
-		expect(mutations).to.equal(0)
+		expect(a.qux).never.to.be.ok()
 	end)
 
 	it("should set value at specified key", function()

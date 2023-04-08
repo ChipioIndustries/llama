@@ -21,7 +21,7 @@ return function()
 			expect(string.find(err, "expected, got")).to.be.ok()
 		end
 	end)
-	
+
 	it("should return a new table", function()
 		local a = { 1, 2, 3 }
 
@@ -76,5 +76,17 @@ return function()
 		expect(result[3]).to.equal(newValue)
 		expect(result[4]).to.equal("value")
 		expect(result[5]).to.equal(true)
+	end)
+
+	it("should work with an empty input table", function()
+		local tbl = {}
+
+		local val1 = "hi"
+		local val2 = 1234
+
+		local result = insert(tbl, 1, val1, val2)
+
+		expect(result[1]).to.equal(val1)
+		expect(result[2]).to.equal(val2)
 	end)
 end

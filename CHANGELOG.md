@@ -1,3 +1,8 @@
+## 1.3.0
+
+* Fixed `List.insert` failing to insert values if the initial list is empty.
+* Cleaned up git repository.
+
 ## 1.2.4
 
 * `Dictionary.throwOnNilIndex` is now recursive.

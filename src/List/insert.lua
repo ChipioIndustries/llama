@@ -16,9 +16,13 @@ local function insert(list, index, ...)
 
 	assert(index > 0 and index <= len + 1, string.format("index %d out of bounds of list of length %d", index, len))
 
+	if len == 0 then
+		return {...}
+	end
+
 	local new = {}
 	local resultIndex = 1
-	
+
 	for i = 1, len do
 		if i == index then
 			for j = 1, select('#', ...) do
@@ -26,7 +30,7 @@ local function insert(list, index, ...)
 				resultIndex = resultIndex + 1
 			end
 		end
-		
+
 		new[resultIndex] = list[i]
 		resultIndex = resultIndex + 1
 	end
