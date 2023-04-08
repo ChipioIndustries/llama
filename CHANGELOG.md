@@ -1,3 +1,7 @@
+## 1.3.2
+
+* Fix publish workflow again.
+
 ## 1.3.1
 
 * Fix publish workflow.
