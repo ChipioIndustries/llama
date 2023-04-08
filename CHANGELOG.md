@@ -1,3 +1,7 @@
+## 1.3.1
+
+* Fix publish workflow.
+
 ## 1.3.0
 
 * Fixed `List.insert` failing to insert values if the initial list is empty.
